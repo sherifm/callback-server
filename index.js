@@ -3,6 +3,9 @@ const	express = require('express'),
 	bodyParser = require('body-parser'),
 	util = require('util');
 
+//const hostname = '172.31.46.42'; 
+const hostname = '0.0.0.0';
+
 // support parsing of application/json type post data
 app.use(
     bodyParser.json({limit: '1000mb'})
@@ -22,4 +25,4 @@ app.post('/', function(req, res) {
     res.send("response");
 })
 
-app.listen(8080, '172.31.46.42');
+app.listen(8080, hostname);

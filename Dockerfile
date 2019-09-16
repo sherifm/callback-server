@@ -7,8 +7,9 @@ MAINTAINER Sherif Mostafa
 # Install Node.js and other dependencies
 RUN apt-get update && \
     apt-get -y install curl && \
-    curl -sL https://deb.nodesource.com/setup | sudo bash - && \
-    apt-get -y install python build-essential nodejs
+    apt-get -y install sudo && \
+#    curl -sL https://deb.nodesource.com/setup | sudo bash - && \
+    apt-get -y install nodejs npm
 
 # Install nodemon
 RUN npm install -g nodemon
@@ -26,4 +27,4 @@ ADD . /src
 EXPOSE  8080
 
 # Run app using nodemon
-CMD ["nodemon", "/src/index.js"]
+CMD ["node", "/src/index.js"]
