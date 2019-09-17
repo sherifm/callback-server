@@ -1,10 +1,15 @@
-const	express = require('express'),
-       	app = express(),
-	bodyParser = require('body-parser'),
-	util = require('util');
+const	express		= require('express'),
+       	app 		= express(),
+	bodyParser 	= require('body-parser'),
+	util 		= require('util'),
+	fs  		= require('fs');
 
-//const hostname = '172.31.46.42'; 
+//listen to all IPv4 adderesses
 const hostname = '0.0.0.0';
+
+// create writestream object
+const wstream = fs.createWriteStream('callback_data.csv', { 
+    'flags': 'a'})
 
 // support parsing of application/json type post data
 app.use(
@@ -21,6 +26,8 @@ app.get('/', function(req, res) {
 })
 
 app.post('/', function(req, res) {
+    wstream.write(JSON.stringify(req.body));
+    wstream.write('\n');
     console.log(req.body);
     res.send("response");
 })
