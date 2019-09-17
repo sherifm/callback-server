@@ -8,7 +8,7 @@ const 	app 		= express();
 const hostname = '0.0.0.0';
 
 // create writestream object
-const wstream = fs.createWriteStream('callback_data.csv', { 
+const wstream = fs.createWriteStream('callback_data.log', { 
     'flags': 'a'})
 
 // support parsing of application/json type post data
