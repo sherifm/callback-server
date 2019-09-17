@@ -1,8 +1,8 @@
 const	express		= require('express'),
-       	app 		= express(),
 	bodyParser 	= require('body-parser'),
-	util 		= require('util'),
 	fs  		= require('fs');
+
+const 	app 		= express();
 
 //listen to all IPv4 adderesses
 const hostname = '0.0.0.0';
