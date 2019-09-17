@@ -1,1 +1,3 @@
-node_modules/
+node_modules/*
+callback_data.csv
+.DS_Store
