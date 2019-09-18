@@ -1,3 +1,4 @@
 node_modules/*
-callback_data.csv
+callback_data*
+Dockerfile
 .DS_Store

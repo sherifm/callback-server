@@ -13,7 +13,7 @@ const wstream = fs.createWriteStream('callback_data.log', {
 
 // support parsing of application/json type post data
 app.use(
-    bodyParser.json({limit: '1000mb'})
+    bodyParser.json({limit: '4000mb'})
 );
 
 app.get('/', function(req, res) {
@@ -27,4 +27,4 @@ app.post('/', function(req, res) {
     res.send("response");
 })
 
-app.listen(8080, hostname);
+app.listen(80, hostname);
